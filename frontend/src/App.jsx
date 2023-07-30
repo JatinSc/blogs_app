@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import Layout from "./components/layout";
+import Layout from "./components/Layout"
 import { UserProvider } from "./context/userContext";
 import ViewPost from "./components/viewPost";
 

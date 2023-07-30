@@ -15,7 +15,7 @@ const Register = () => {
     console.log(data)
 
     try {
-      const res = await fetch(`http://127.0.0.1:3000/register`, {
+      const res = await fetch(`https://blogs-backend-mha8.onrender.com/register`, {
         method: "POST",
         headers: {
           "Content-type": "application/json"

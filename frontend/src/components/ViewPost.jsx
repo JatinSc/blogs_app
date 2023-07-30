@@ -12,7 +12,7 @@ const ViewPost = () => {
   const getPosts = async () => {
     setIsLoading(true)
     try {
-      const res = await fetch(`http://127.0.0.1:3000/post/view/${id}`, {
+      const res = await fetch(`https://blogs-backend-mha8.onrender.com/post/view/${id}`, {
         method: "GET", 
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`

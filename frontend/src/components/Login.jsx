@@ -14,7 +14,7 @@ const Login = () => {
         event.preventDefault()
         // console.log(data)
         try {
-          const res = await fetch(`http://127.0.0.1:3000/login`, {
+          const res = await fetch(`https://blogs-backend-mha8.onrender.com/login`, {
             method:"POST",
             headers:{
               "Content-type": "application/json"

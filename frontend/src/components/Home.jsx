@@ -24,7 +24,7 @@ const Home = () => {
     await setPostData({ ...postData, userId: user.id, posted_by: user.username })
 
     try {
-      const res = await fetch(`http://127.0.0.1:3000/post/create`, {
+      const res = await fetch(`https://blogs-backend-mha8.onrender.com/post/create`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -55,7 +55,7 @@ const Home = () => {
     setIsLoading(true)
     try {
 
-      const res = await fetch(`http://127.0.0.1:3000/post/all/`, {
+      const res = await fetch(`https://blogs-backend-mha8.onrender.com/post/all/`, {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("token")}`
@@ -78,7 +78,7 @@ const Home = () => {
   const deletePost = async (id) => {
     setIsLoading(true)
     try {
-      const res = await fetch(`http://127.0.0.1:3000/post/delete/${id}`, {
+      const res = await fetch(`https://blogs-backend-mha8.onrender.com/post/delete/${id}`, {
         method: "DELETE",
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("token")}`
