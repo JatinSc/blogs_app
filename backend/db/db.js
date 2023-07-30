@@ -1,10 +1,17 @@
+require('dotenv').config()
 const { Sequelize , DataTypes  } = require('sequelize');
 
 // Replace 'your_database_name', 'your_username', and 'your_password' with your MySQL credentials
-const sequelize = new Sequelize('blog', 'jatin', '7011285746@jatin', {
-    host: '127.0.0.1',
+const sequelize = new Sequelize({
+    
+    username:'ucipfvljc5ka75a1',
+    password:process.env.password,
+    database:process.env.databaseName,
+    host: process.env.host,
     dialect: 'mysql',
   });
+
+
 
 // Test the database connection
 (async () => {
