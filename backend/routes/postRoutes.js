@@ -48,7 +48,7 @@ postRoutes.get('/all', userAuth, async (req, res) => {
         });
         return res.status(200)
             .json({
-                post: posts
+                post: posts.reverse()
             })
     } catch (error) {
          console.log('Error fetching posts:', error.message);
