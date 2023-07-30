@@ -6,7 +6,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Layout from "./components/Layout"
 import { UserProvider } from "./context/userContext";
-import ViewPost from "../components/ViewPost";
+import ViewPost from "./components/ViewPost";
 
 
 const App = () => {
