@@ -70,7 +70,7 @@ userRoutes.post('/login', async (req, res) => {
         // # if everything is fine we will generate token
         // # it takes id , secret key and we can give expiration duration 
         const payload = {id:doesUserExists.id}
-        const token = jwt.sign(payload, process.env.JWT_secret_key,{expiresIn:'1d'})
+        const token = jwt.sign(payload, process.env.JWT_secret_key)
         //#not sending password in response
         doesUserExists.password = undefined
         return res

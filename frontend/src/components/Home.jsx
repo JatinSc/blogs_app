@@ -52,6 +52,9 @@ const Home = () => {
   }
 
   const getPosts = async () => {
+    if(!localStorage.getItem("token")){
+      navigate('/login')
+    }
     setIsLoading(true)
     try {
 
