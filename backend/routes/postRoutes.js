@@ -5,25 +5,19 @@ const userAuth = require('../middlewares/userAuth')
 
 postRoutes.post('/create', userAuth , async (req, res) => {
 
-    const { title, description, userId, posted_by } = req.body
+    const { title, description } = req.body
     if (!title || !description) {
         return res.status(400).json({
             error: "please enter all the required fields",
         });
     }
     
-    if (!userId || !posted_by) {
-        return res.status(401).json({
-            error: "Authentication Error Please Login Again",
-        });
-    }
-
     try {
         const newPost = await Post.create({
             title,
             description,
-            posted_by,
-            userId
+            posted_by:req.user.username,
+            userId:req.user.id
         })
 
         // Return the newly created post as the response
