@@ -165,6 +165,9 @@ const Home = () => {
           <a onClick={() => { setShowCreateModel(true) }}>
             <img src='./create.png'></img>
           </a>
+          <img className='logout' src="./logout.png"
+          onClick={(e) => { setUser(null), localStorage.clear(), navigate('/login', { replace: true }) }}
+          />
         </div>
         {
           post && post.filter((post) =>

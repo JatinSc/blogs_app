@@ -40,7 +40,7 @@ const Register = () => {
       <div className="registerContainer">
        
         <form className="form" onSubmit={handelSubmit}>
-        <h1>Blog <img src="blog.png"/> </h1>
+        <h1>Blogs <img src="blog.png"/> </h1>
           <p className="form-title">Create Account</p>
           <small>Get started with our app, just create an account and enjoy the experience.</small>
           <div className="input-container">

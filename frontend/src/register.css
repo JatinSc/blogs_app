@@ -1,6 +1,6 @@
 .registerContainer{
     width:100%;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -10,7 +10,12 @@
 }
 
 .form {
-    background-color: #fff;
+  @media (max-width: 600px) {
+      box-shadow: none;
+      width: 80%;
+  }
+
+    background-color: #ffffff;
     display: flex;
     justify-content:center;
     align-items:center;
@@ -35,7 +40,7 @@
     line-height: 1.75rem;
     font-weight: 600;
     text-align: center;
-    color: #000;
+    color: #ff8800;
   }
   small{
     color: #6B7280;
@@ -45,6 +50,11 @@
   }
   .input-container {
     position: relative;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
   }
   
   .input-container input, .form button {
@@ -58,10 +68,12 @@
     padding: 1rem;
     padding-right: 3rem;
     font-size: 0.875rem;
-    line-height: 1.25rem;
-    width: 370px;
+    line-height: 1rem;
+    width: 90%;
     border-radius: 0.5rem;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    letter-spacing: 1px;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+    color: rgb(254, 115, 1);
   }
   
   .submit {
@@ -69,7 +81,7 @@
     padding-bottom: 0.75rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-    background-color: #46a5e5;
+    background-color: #ff7700;
     color: #ffffff;
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -88,4 +100,7 @@
   
   .signup-link a {
     text-decoration: underline;
+    color: orange;
+    margin-left: 10px;
+    font-size: 15px;
   }

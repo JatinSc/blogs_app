@@ -6,17 +6,20 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
-#title{
-    color:rgb(130, 79, 3);
+
+#title {
+    color: rgb(130, 79, 3);
     padding-inline: 10px;
     font-size: 25px;
     font-weight: 700;
     border-left: 3px solid yellow;
     border-bottom: 3px solid yellow;
 }
-.publish , .cancel{
+
+.publish,
+.cancel {
     padding: .4rem 1rem;
     background-color: rgb(255, 242, 4);
     border: none;
@@ -27,15 +30,16 @@
     border-radius: 5px;
     box-shadow: 10px 20px 20px rgba(255, 255, 255, 0.1);
 
-    &:hover{
-      scale: 1.1;
+    &:hover {
+        scale: 1.1;
     }
 }
 
-.cancel{
+.cancel {
     background-color: rgb(148, 74, 0);
     color: white;
 }
+
 .loadingContainer {
     position: relative;
     width: 100%;
@@ -48,22 +52,55 @@
 }
 
 .create {
-    width: 70%;
+    width: 80%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     padding-top: 1rem;
- 
-    & input{
+
+    & input {
+        @media(max-width:600px){
+           height: 30px;
+        }
+
         width: 30vmax;
         box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.1);
         outline: none;
     }
+
     .searchImage {
+        @media(max-width:600px){
+            width: 25px;
+            height: 25px;
+        }
         width: 35px;
+
+    }
+
+    .logout {
+        @media(max-width:600px){
+            width: 30px;
+            height: 30px;
+        }
+        width: 45px;
+        height: 45px;
+        border-radius: 999px;
+        box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.1);
+        margin-left: 20px;
+        transition: .5s;
+
+        &:hover {
+            transform: translateY(-5px);
+            cursor: pointer;
+        }
+
     }
 
     & a {
+        @media(max-width:600px){
+            width: 35px;
+            height: 35px;
+        }
         width: 50px;
         height: 50px;
         border-radius: 999px;
@@ -79,7 +116,10 @@
         }
 
         & img {
-
+            @media(max-width:600px){
+                width: 25px;
+                height: 25px;
+            }
 
             width: 40px;
             height: 40px;
@@ -102,9 +142,12 @@
 }
 
 .card {
+    @media(max-width:600px){
+        width: 80% !important;
+    }
     position: relative;
-    min-width: 70%;
-    max-width: 900px;
+    /* min-width: 60%;
+    max-width: 900px; */
     min-height: 300px;
     max-height: 500px;
     overflow: hidden;
@@ -121,17 +164,23 @@
     }
 
     .header {
+
         display: flex;
         justify-content: space-between;
         align-items: center;
         row-gap: 10px;
         flex-wrap: wrap;
 
-        >p {
+        > p {
+
             color: grey;
-            text-transform: uppercase;
+            text-transform: capitalize;
 
             & img {
+                @media(max-width:600px){
+                    width: 20px;
+                    height: 20px;
+                }
                 width: 30px;
                 margin-right: 10px
             }
@@ -145,8 +194,13 @@
             gap: 20px;
 
             & img {
+                @media(max-width:600px){
+                    width: 20px;
+                    height: 20px;
+                }
+                border-radius: 999px;
                 width: 30px;
-
+                box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
                 &:hover {
                     scale: 1.05;
                     cursor: pointer;
@@ -156,18 +210,25 @@
     }
 
     & p:nth-child(2) {
+
+        @media(max-width:600px){
+            font-size: 20px;
+            text-align: center;
+        }
         text-transform: capitalize;
-        color: black;
+        color: rgb(60, 59, 59);
+        padding: .2rem;
         font-size: 25px;
-        font-weight: 500;
+        font-weight: 650;
         letter-spacing: 1px;
         word-spacing: 2px;
     }
 
-    & p:nth-child(3) {
-        display: grid;
-        grid-template-rows: 0fr;
-        transition: grid-template-rows 500ms;
+    & p:last-child {
+        @media(max-width:600px){
+            font-size: 12px;
+            text-align: center;
+        }
         text-transform: capitalize;
         color: rgb(66, 66, 66);
         font-size: 15px;

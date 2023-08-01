@@ -10,7 +10,11 @@ body{
 position: sticky;
 top:0;
 z-index: 999;
-
+& a{
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(58, 58, 58) !important;
+}
 & img{
 width:40px
 }
@@ -18,4 +22,5 @@ width:40px
 scale:1.2;
 cursor:pointer;
 }
+
 }
