@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import authContext from '../context/userContext'
+import userContext from '../context/userContext'
 import { Link, useNavigate } from "react-router-dom"
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -16,7 +16,7 @@ const Home = () => {
   const [showCreateModel, setShowCreateModel] = useState(false);
   const [postData, setPostData] = useState({ title: "", description: "", userId: "", posted_by: "" })
   const [post, setPost] = useState([])
-  const { user, setUser } = useContext(authContext)
+  const { user, setUser } = useContext(userContext)
 
   const handelSubmit = async (event) => {
     // console.log(user)

@@ -1,11 +1,11 @@
 import React , {useContext, useEffect, useState} from 'react';
-import authContext from '../context/userContext'
+import userContext from '../context/userContext'
 import {Link, useNavigate} from "react-router-dom"
 import '../App.css'
 
 const Layout = ({children}) => {
     const navigate = useNavigate()
-  const {user , setUser} = useContext(authContext)
+  const {user , setUser} = useContext(userContext)
 
     return (
         <>

@@ -1,11 +1,11 @@
 import React , {useContext, useEffect, useState} from 'react';
 import '../register.css';
 import {Link, useNavigate} from "react-router-dom";
-import authContext from '../context/userContext'
+import userContext from '../context/userContext'
 
 const Login = () => {
     const navigate = useNavigate()
-    const {user , setUser} = useContext(authContext)
+    const {user , setUser} = useContext(userContext)
     const [data,setData] = useState({email:"",password:""})
     useEffect(()=>{
       user&&navigate('/',{replace:true})
