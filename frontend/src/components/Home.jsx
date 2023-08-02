@@ -12,7 +12,7 @@ const Home = () => {
   const [isLoading , setIsLoading] = useState(false)
   const navigate = useNavigate()
   const [search,setSearch]=useState("")
-  const [alert, setAlert] = useState({ type: "", text: "" })
+  // const [alert, setAlert] = useState({ type: "", text: "" })
   const [showCreateModel, setShowCreateModel] = useState(false);
   const [postData, setPostData] = useState({ title: "", description: "", userId: "", posted_by: "" })
   const [post, setPost] = useState([])
@@ -52,9 +52,9 @@ const Home = () => {
   }
 
   const getPosts = async () => {
-    if(!localStorage.getItem("token")){
-      navigate('/login')
-    }
+    // if(!localStorage.getItem("token")){
+    //   navigate('/login')
+    // }
     setIsLoading(true)
     try {
 

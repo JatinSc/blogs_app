@@ -7,9 +7,9 @@ const Register = () => {
   const navigate = useNavigate()
   const { user, setUser } = useContext(userContext)
   const [data, setData] = useState({ username: "", email: "", password: "" })
-  useEffect(() => {
-    user && navigate('/', { replace: true })
-  }, [])
+  // useEffect(() => {
+  //   user && navigate('/', { replace: true })
+  // }, [])
   const handelSubmit = async (event) => {
     event.preventDefault()
     console.log(data)
