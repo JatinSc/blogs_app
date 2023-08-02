@@ -9,9 +9,9 @@ import Swal from 'sweetalert2'
 import Loading from './Loading';
 
 const Home = () => {
-  const [isLoading , setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
-  const [search,setSearch]=useState("")
+  const [search, setSearch] = useState("")
   // const [alert, setAlert] = useState({ type: "", text: "" })
   const [showCreateModel, setShowCreateModel] = useState(false);
   const [postData, setPostData] = useState({ title: "", description: "", userId: "", posted_by: "" })
@@ -52,9 +52,6 @@ const Home = () => {
   }
 
   const getPosts = async () => {
-    // if(!localStorage.getItem("token")){
-    //   navigate('/login')
-    // }
     setIsLoading(true)
     try {
 
@@ -116,7 +113,8 @@ const Home = () => {
 
   return (
     <>
-      {isLoading ? (<div className="loadingContainer"><Loading/></div>  ) : ( <> <Modal
+
+      <Modal
         show={showCreateModel}
         onHide={() => setShowCreateModel(false)}
         dialogClassName="modal-90w"
@@ -158,51 +156,44 @@ const Home = () => {
       </Modal>
       <div className='container'>
         <div className='create'>
-        <img src="search1.png" className="searchImage me-4"/>
-        <input className="form-control me-3" 
-        onChange={(e)=> {setSearch(e.target.value)}}
-        type="search....." placeholder="Search" aria-label="Search" />
+          <img src="search1.png" className="searchImage me-4" />
+          <input className="form-control me-3"
+            onChange={(e) => { setSearch(e.target.value) }}
+            type="search....." placeholder="Search" aria-label="Search" />
           <a onClick={() => { setShowCreateModel(true) }}>
             <img src='./create.png'></img>
           </a>
-          <img className='logout' src="./logout.png"
-          onClick={(e) => { setUser(null), localStorage.clear(), navigate('/login', { replace: true }) }}
-          />
         </div>
-        {
+        {isLoading ? (<div className="loadingContainer"><Loading/></div>) :
           post && post.filter((post) =>
-          post.title.toLowerCase().includes(search.toLowerCase())).map((post, index) =>
-          (<div className="card" key={index}>
-            <div className="header">
-              <p>
-                <img src="user.png" alt="account" />
-                {post.posted_by}
-              </p>
-              <div>
-                <img
-                  onClick={(e) => { deletePost(post.id) }}
-                  src='./delete.png'></img>
-                <Link to={`/view/${post.id}`}>
-                <img src='./read.png'/>
-                </Link>
-                
+            post.title.toLowerCase().includes(search.toLowerCase())).map((post, index) =>
+            (<div className="card" key={index}>
+              <div className="header">
+                <p>
+                  <img src="user.png" alt="account" />
+                  {post.posted_by}
+                </p>
+                <div>
+                  <img
+                    onClick={(e) => { deletePost(post.id) }}
+                    src='./delete.png'></img>
+                  <Link to={`/view/${post.id}`}>
+                    <img src='./read.png' />
+                  </Link>
+                </div>
               </div>
-            </div>
-
-            <p>
-              {post.title}
-            </p>
-            <div className="content">
               <p>
-                {post.description}
+                {post.title}
               </p>
-            </div>
-
-          </div>)
-          )
+              <div className="content">
+                <p>
+                  {post.description}
+                </p>
+              </div>
+            </div>))
         }
 
-      </div></>)}
+      </div>
     </>
   )
 }

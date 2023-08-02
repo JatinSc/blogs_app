@@ -15,13 +15,13 @@ const Layout = ({children}) => {
                     <button className="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                   {/* { user && <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                   { user && <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <form className="d-flex ms-auto">
                             <img src="./logout.png"
                                 onClick={(e) => { setUser(null), localStorage.clear(), navigate('/login', { replace: true }) }}
                             />
                         </form>
-                    </div>} */}
+                    </div>}
                 </div>
             </nav>
             {children}

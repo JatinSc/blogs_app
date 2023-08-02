@@ -146,8 +146,8 @@
         width: 80% !important;
     }
     position: relative;
-    /* min-width: 60%;
-    max-width: 900px; */
+    min-width: 70%;
+    max-width: 900px;
     min-height: 300px;
     max-height: 500px;
     overflow: hidden;
