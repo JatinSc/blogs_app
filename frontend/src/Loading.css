@@ -272,6 +272,9 @@
   }
 
   .loadingText{
+    @media(max-width:600px) {
+        font-size: 22px;
+      }
     font-size: 25px;
     color: grey;
   }
