@@ -3,7 +3,7 @@
     min-height:100vh;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:flex-start;
     align-items:center;
 
     
@@ -12,7 +12,7 @@
 .form {
   @media (max-width: 600px) {
       box-shadow: none;
-      width: 80%;
+      width: 100%;
   }
 
     background-color: #ffffff;
@@ -21,7 +21,8 @@
     align-items:center;
     flex-direction:column;
     gap:2px;
-    padding: 1rem;
+    margin-top: 20%;
+    padding: .5rem;
     width: 400px;
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -43,6 +44,9 @@
     color: #ff8800;
   }
   small{
+    @media (max-width: 600px) {
+        width: 80%;
+      }
     color: #6B7280;
     font-size: 0.750rem;
     line-height: 1.25rem;

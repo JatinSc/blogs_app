@@ -161,7 +161,7 @@ const Home = () => {
             onChange={(e) => { setSearch(e.target.value) }}
             type="search....." placeholder="Search" aria-label="Search" />
           <a onClick={() => { setShowCreateModel(true) }}>
-            <img src='./create.png'></img>
+            <img className="post" src='./create.png'></img>
           </a>
         </div>
         {isLoading ? (<div className="loadingContainer"><Loading/></div>) :
@@ -187,7 +187,7 @@ const Home = () => {
               </p>
               <div className="content">
                 <p>
-                  {post.description}
+                  {`${post.description.slice(0,400)} read more.....`}
                 </p>
               </div>
             </div>))
