@@ -140,7 +140,7 @@
     gap: 10px;
     color: white;
 }
-.card::before {
+/* .card::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -151,7 +151,7 @@
     transition: 0.5s;
     z-index: 1;
 
-}
+} */
 .card {
     @media(max-width:600px){
         width: 80% !important;
