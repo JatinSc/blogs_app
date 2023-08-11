@@ -17,6 +17,30 @@ const Home = () => {
   const [postData, setPostData] = useState({ title: "", description: "", userId: "", posted_by: "" })
   const [post, setPost] = useState([])
   const { user, setUser } = useContext(userContext)
+  const [sliceLength, setSliceLength] = useState(400); // Default value
+
+  useEffect(() => {
+    // Adjust slicing based on screen width
+    if (window.innerWidth < 768) {
+      setSliceLength(200);
+    } else {
+      setSliceLength(400);
+    }
+
+    // Update slicing when the window is resized
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setSliceLength(200);
+      } else {
+        setSliceLength(400);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handelSubmit = async (event) => {
     // console.log(user)
@@ -191,7 +215,8 @@ const Home = () => {
               </p>
               <div className="content">
                 <p>
-                  {`${post.description.slice(0,400)} read more.....`}
+                  {`${post.description.slice(0, sliceLength)}`}
+                  <Link className='readMore' to={`/view/${post.id}`}> read more...</Link>
                 </p>
               </div>
             </div>))

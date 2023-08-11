@@ -273,4 +273,8 @@
         letter-spacing: 1px;
         word-spacing: 2px;
     }
+
+    .readMore{
+        text-decoration: none;
+    }
 }
