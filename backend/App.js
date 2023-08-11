@@ -4,7 +4,6 @@ const { sequelize, User, Post } = require('./db/db'); // Import Sequelize instan
 const userRoutes = require('./routes/userRoutes')
 const postRoutes = require('./routes/postRoutes')
 require('dotenv').config()
-const userAuth = require('./middlewares/userAuth')
 
 const app = express();
 app.use(express.json())

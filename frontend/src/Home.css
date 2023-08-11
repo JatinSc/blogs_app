@@ -10,21 +10,21 @@
 }
 
 #title {
-    color: rgb(130, 79, 3);
-    padding-inline: 10px;
+    color: rgb(59, 73, 97);
+    padding-inline: 5px;
     font-size: 25px;
     font-weight: 700;
-    border-left: 3px solid yellow;
-    border-bottom: 3px solid yellow;
+    border-left: 3px solid rgb(143, 177, 241);
+    border-bottom: 3px solid #f7a95b;
 }
 
 .publish,
 .cancel {
     padding: .4rem 1rem;
-    background-color: rgb(255, 242, 4);
+    background-color: rgb(4, 92, 255);
     border: none;
     outline: none;
-    color: rgb(157, 76, 1);
+    color: rgb(255, 255, 255);
     font-size: 15px;
     font-weight: 500;
     border-radius: 5px;
@@ -36,9 +36,42 @@
 }
 
 .cancel {
-    background-color: rgb(148, 74, 0);
+    background-color: rgb(255, 111, 2);
     color: white;
 }
+
+.publish:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    scale: none;
+}
+
+.label {
+    padding-inline: 5px;
+    color: rgb(59, 73, 97);
+    font-size: 18px;
+    font-weight: 500;
+    border-left: 3px solid rgb(143, 177, 241);
+    border-bottom: 3px solid #f7a95b;
+
+}
+
+.input {
+    border: 2px solid rgb(187, 186, 186);
+    outline: none;
+    font-weight: 500;
+    color: rgb(37, 102, 222) !important;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+
+    &::placeholder {
+        color: orange;
+        font-size: 15px;
+    }
+}
+
+
 
 .loadingContainer {
     position: relative;
@@ -59,8 +92,8 @@
     padding-top: 1rem;
 
     & input {
-        @media(max-width:600px){
-           height: 30px;
+        @media(max-width:600px) {
+            height: 30px;
         }
 
         width: 30vmax;
@@ -69,38 +102,22 @@
     }
 
     .searchImage {
-        @media(max-width:600px){
+        @media(max-width:600px) {
             width: 25px;
             height: 25px;
         }
+
         width: 35px;
 
     }
 
-    .logout {
-        @media(max-width:600px){
-            width: 30px;
-            height: 30px;
-        }
-        width: 45px;
-        height: 45px;
-        border-radius: 999px;
-        box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.1);
-        margin-left: 20px;
-        transition: .5s;
-
-        &:hover {
-            transform: translateY(-5px);
-            cursor: pointer;
-        }
-
-    }
 
     & a {
-        @media(max-width:600px){
+        @media(max-width:600px) {
             width: 35px;
             height: 35px;
         }
+
         width: 50px;
         height: 50px;
         border-radius: 999px;
@@ -116,7 +133,7 @@
         }
 
         & img {
-            @media(max-width:600px){
+            @media(max-width:600px) {
                 width: 30px;
                 height: 30px;
             }
@@ -140,6 +157,7 @@
     gap: 10px;
     color: white;
 }
+
 /* .card::before {
     content: '';
     position: absolute;
@@ -153,9 +171,10 @@
 
 } */
 .card {
-    @media(max-width:600px){
+    @media(max-width:600px) {
         width: 80% !important;
     }
+
     position: relative;
     min-width: 40%;
     max-width: 800px;
@@ -165,7 +184,7 @@
     outline: none;
     background-color: #ffffff;
     border-radius: 8px;
-    /* border: 2px solid rgb(254, 254, 254); */
+    border: 2px solid rgb(254, 254, 254);
     padding: 10px 20px;
     margin-bottom: 10px;
     box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.1);
@@ -183,16 +202,17 @@
         row-gap: 10px;
         flex-wrap: wrap;
 
-        > p {
+        >p {
 
             color: grey;
             text-transform: capitalize;
 
             & img {
-                @media(max-width:600px){
+                @media(max-width:600px) {
                     width: 20px;
                     height: 20px;
                 }
+
                 width: 30px;
                 margin-right: 10px
             }
@@ -206,13 +226,15 @@
             gap: 20px;
 
             & img {
-                @media(max-width:600px){
+                @media(max-width:600px) {
                     width: 20px;
                     height: 20px;
                 }
+
                 border-radius: 999px;
                 width: 30px;
                 box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+
                 &:hover {
                     scale: 1.05;
                     cursor: pointer;
@@ -223,10 +245,11 @@
 
     & p:nth-child(2) {
 
-        @media(max-width:600px){
+        @media(max-width:600px) {
             font-size: 20px;
             text-align: center;
         }
+
         text-transform: capitalize;
         color: rgb(60, 59, 59);
         padding: .2rem;
@@ -237,12 +260,13 @@
     }
 
     & p:last-child {
-        @media(max-width:600px){
+        @media(max-width:600px) {
             font-size: 12px;
             text-align: center;
         }
+
         text-transform: capitalize;
-                text-align: center;
+        text-align: center;
         color: rgb(66, 66, 66);
         font-size: 15px;
         font-weight: 500;

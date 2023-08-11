@@ -128,20 +128,23 @@ const Home = () => {
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Title</Form.Label>
+              <Form.Label className='label'>Title</Form.Label>
               <Form.Control type="text"
+                className='input'
                 required={true}
                 value={postData.title}
                 onChange={(e) => setPostData({ ...postData, title: e.target.value })}
-                placeholder="abroad trip..." />
+                placeholder="Add your blog Title here..." />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Description</Form.Label>
+              <Form.Label className='label'>Description</Form.Label>
               <Form.Control as="textarea"
+                className='input'
+                placeholder='Add your blogs here'
                 required={true}
                 value={postData.description}
                 onChange={(e) => setPostData({ ...postData, description: e.target.value })}
-                rows={15} />
+                rows={10} />
             </Form.Group>
           </Form>
           <div className="actions">
@@ -149,6 +152,7 @@ const Home = () => {
               onClick={() => { setShowCreateModel(false), setPostData({ title: "", description: "" }) }}
             >CANCEL</button>
             <button type="button"
+              disabled={postData.title==""||postData.description==""}
               onClick={(e) => { handelSubmit(e) }}
               className="publish">Publish</button>
           </div>
