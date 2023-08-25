@@ -48,6 +48,11 @@ userRoutes.post('/register', async (req, res) => {
 userRoutes.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
+    if (!email || !password) {
+        return res.status(409)
+            .json({ error: 'please enter all the fields' })
+    }
+
     try {
         // Check if the user exists with the provided email
         const doesUserExists = await User.findOne({
@@ -76,7 +81,7 @@ userRoutes.post('/login', async (req, res) => {
         return res
             .status(200)
             .json({
-                message: "login successfully",
+                message: "Logged in Successfully",
                 token: token,
                 user: doesUserExists
             })

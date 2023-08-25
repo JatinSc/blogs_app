@@ -22,7 +22,7 @@ postRoutes.post('/create', userAuth , async (req, res) => {
 
         // Return the newly created post as the response
         return res.status(201).json({
-            message: "Post created successfully",
+            message: "Posted Successfully",
             post: newPost
         });
 

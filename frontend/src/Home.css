@@ -173,11 +173,10 @@
 .card {
     @media(max-width:600px) {
         width: 80% !important;
-    }
 
+    }
     position: relative;
-    min-width: 40%;
-    max-width: 800px;
+    width: 800px;
     min-height: 250px;
     max-height: min-content;
     overflow: hidden;
@@ -274,7 +273,7 @@
         word-spacing: 2px;
     }
 
-    .readMore{
+    .readMore {
         text-decoration: none;
     }
 }

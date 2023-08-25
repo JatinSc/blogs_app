@@ -7,12 +7,14 @@ import Login from "./components/Login";
 import Layout from "./components/Layout"
 import { UserProvider } from "./context/userContext";
 import ViewPost from "./components/ViewPost";
+import { Toaster } from 'react-hot-toast';
 
 
 const App = () => {
   return (
     <UserProvider>
       <Layout>
+        <Toaster />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/register" element={<Register />}></Route>

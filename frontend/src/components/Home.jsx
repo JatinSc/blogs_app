@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import '../Home.css'
 //for alert messages
-import Swal from 'sweetalert2'
+import toast from 'react-hot-toast';
 import Loading from './Loading';
 
 const Home = () => {
@@ -59,20 +59,32 @@ const Home = () => {
 
       const result = await res.json()
       if (!result.error) {
+        toast.success(result.message, {
+          duration: 4000,
+          position: 'top-center',
+          iconTheme: {
+            primary: '#ff7b00',
+            secondary: 'white',
+          },
+        })
         console.log(result.message)
         setPostData({ title: "", description: "" })
         getPosts()
         setShowCreateModel(false)
       } else {
         console.log(result.error)
+        toast.error(result.error, {
+          duration: 5000,
+          position: 'top-center',
+          iconTheme: {
+            primary: '#ff7b00',
+            secondary: 'white',
+          },
+        })
       }
     } catch (error) {
-      // setShowCreateModel(false)
-      // setAlert({type:"error",text:error})
-      // handleShowAlert()
       console.log(error)
     }
-    // setAlert({ type: "", text: "" })
   }
 
   const getPosts = async () => {
@@ -88,6 +100,14 @@ const Home = () => {
 
       const result = await res.json();
       if (!result.error) {
+        toast.success("Posts Refreshed Successfully", {
+          duration: 2000,
+          position: 'bottom-center',
+          iconTheme: {
+            primary: '#ff7b00',
+            secondary: 'white',
+          },
+        })
         setPost(result.post)
         console.log(result.post)
         setIsLoading(false)
@@ -110,6 +130,14 @@ const Home = () => {
       })
       const result = await res.json();
       if (!result.error) {
+        toast.success(result.message, {
+          duration: 2000,
+          position: 'top-center',
+          iconTheme: {
+            primary: '#ff7b00',
+            secondary: 'white',
+          },
+        })
         getPosts()
         console.log(result.message)
 
@@ -126,18 +154,10 @@ const Home = () => {
     getPosts()
   }, [])
 
-  // const handleShowAlert = () => {
-  //   Swal.fire({
-  //     title: alert.type,
-  //     text: alert.text,
-  //     icon: alert.type,
-  //     confirmButtonText: 'OK',
-  //   });
-  // };
+
 
   return (
     <>
-
       <Modal
         show={showCreateModel}
         onHide={() => setShowCreateModel(false)}
@@ -176,7 +196,7 @@ const Home = () => {
               onClick={() => { setShowCreateModel(false), setPostData({ title: "", description: "" }) }}
             >CANCEL</button>
             <button type="button"
-              disabled={postData.title==""||postData.description==""}
+              disabled={postData.title == "" || postData.description == ""}
               onClick={(e) => { handelSubmit(e) }}
               className="publish">Publish</button>
           </div>
@@ -192,7 +212,7 @@ const Home = () => {
             <img className="post" src='./create.png'></img>
           </a>
         </div>
-        {isLoading ? (<div className="loadingContainer"><Loading/></div>) :
+        {isLoading ? (<div className="loadingContainer"><Loading /></div>) :
           post && post.filter((post) =>
             post.title.toLowerCase().includes(search.toLowerCase())).map((post, index) =>
             (<div className="card" key={index}>

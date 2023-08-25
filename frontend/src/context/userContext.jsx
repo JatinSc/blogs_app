@@ -14,6 +14,7 @@ export const UserProvider = ({ children }) => {
 
   const checkUserLoggedIn = async () => {
     // * localhost url => http://127.0.0.1:3000
+    // * deployed url of backend => https://blogs-backend-mha8.onrender.com
     try {
       const res = await fetch("https://blogs-backend-mha8.onrender.com/me", {
         method: "GET",
