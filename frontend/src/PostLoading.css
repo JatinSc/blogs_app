@@ -1,0 +1,110 @@
+@keyframes skeleton-loading {
+    0% {
+        background-color: rgb(205, 205, 205);
+    }
+
+    100% {
+        background-color: rgb(247, 244, 244);
+    }
+}
+
+.skeleton-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 100%;
+}
+
+.skeleton-card {
+    @media(max-width:600px) {
+        width: 270px;
+        height: 100%;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    width: 800px;
+    height: 250px;
+
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 2px solid rgb(254, 254, 254);
+    padding: 10px 10px;
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        transform: translateY(-5px)
+    }
+
+    .skeleton-header {
+        @media(max-width:600px) {
+            height: 40px;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        row-gap: 10px;
+        flex-wrap: wrap;
+        height: 70px;
+
+        >div {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+
+            .skeleton-img {
+                @media(max-width:600px) {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                width: 40px;
+                height: 40px;
+                border-radius: 999px;
+                margin-right: 10px;
+                opacity: .7;
+                animation: skeleton-loading 1s linear infinite alternate;
+            }
+
+            .skeleton-text {
+                width: 70px;
+                height: 20px;
+                opacity: .7;
+                animation: skeleton-loading 1s linear infinite alternate;
+            }
+        }
+
+    }
+
+    .skeleton-title {
+
+        @media(max-width:600px) {
+            height: 20px;
+            width: 120px;
+            margin-left: 65px ;
+        }
+
+        height: 30px;
+        width: 250px;
+        border-radius: 5px;
+        opacity: .7;
+        animation: skeleton-loading 1s linear infinite alternate;
+    }
+
+    .skeleton-content {
+        @media(max-width:600px) {
+            height: 140px;
+
+        }
+
+        border-radius: 10px;
+        height: 150px;
+        opacity: .7;
+        animation: skeleton-loading 1s linear infinite alternate;
+    }
+}

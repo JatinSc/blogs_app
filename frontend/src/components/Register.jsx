@@ -3,15 +3,18 @@ import '../register.css'
 import { Link, useNavigate } from "react-router-dom"
 import userContext from '../context/userContext'
 import toast, { Toaster } from 'react-hot-toast';
+import Loading from './Loading';
 
 const Register = () => {
   const navigate = useNavigate()
+  const [loading, setLoading] = useState(false)
   const [data, setData] = useState({ username: "", email: "", password: "" })
   // useEffect(() => {
   //   user && navigate('/', { replace: true })
   // }, [])
   const handelSubmit = async (event) => {
     event.preventDefault()
+    setLoading(true)
     console.log(data)
 
     try {
@@ -33,10 +36,12 @@ const Register = () => {
             secondary: 'white',
           },
         })
+        setLoading(false)
         navigate('/login', { replace: true })
         setData({ username: "", email: "", password: "" })
-
+        set
       } else {
+        setLoading(false)
         console.log(result.error)
         toast.error(result.error, {
           duration: 5000,
@@ -54,30 +59,39 @@ const Register = () => {
   }
   return (
     <>
-      <div className="registerContainer">
-        <form className="form" onSubmit={handelSubmit}>
-          <h1>Blogs <img src="blog.png" /> </h1>
-          <p className="form-title">Create Account</p>
-          <small>Get started with our app, just create an account and enjoy the experience.</small>
-          <div className="input-container">
-            <input value={data.username} type="text" onChange={(e) => setData({ ...data, username: e.target.value })} placeholder="Username" autoComplete="off" />
+      {
+        loading ? 
+          <div className='registerContainer'>
+            <Loading />
           </div>
-          <div className="input-container">
-            <input value={data.email} type="email" onChange={(e) => setData({ ...data, email: e.target.value })} placeholder="email" autoComplete="off" />
-          </div>
-          <div className="input-container">
-            <input value={data.password} type="password" onChange={(e) => setData({ ...data, password: e.target.value })} placeholder="password" autoComplete="off" />
-          </div>
-          <button type="submit" className="submit">
-            Sign up
-          </button>
+          : (
+          <div className="registerContainer">
+            <form className="form" onSubmit={handelSubmit}>
+              <h1>Blogs <img src="blog.png" /> </h1>
+              <p className="form-title">Create Account</p>
+              <small>Get started with our app, just create an account and enjoy the experience.</small>
+              <div className="input-container">
+                <input value={data.username} type="text" onChange={(e) => setData({ ...data, username: e.target.value })} placeholder="Username" autoComplete="off" />
+              </div>
+              <div className="input-container">
+                <input value={data.email} type="email" onChange={(e) => setData({ ...data, email: e.target.value })} placeholder="email" autoComplete="off" />
+              </div>
+              <div className="input-container">
+                <input value={data.password} type="password" onChange={(e) => setData({ ...data, password: e.target.value })} placeholder="password" autoComplete="off" />
+              </div>
+              <button type="submit" className="submit">
+                Sign up
+              </button>
 
-          <p className="signup-link">
-            Already have an account ?
-            <Link to="/login"> Sign in</Link>
-          </p>
-        </form>
-      </div>
+              <p className="signup-link">
+                Already have an account ?
+                <Link to="/login"> Sign in</Link>
+              </p>
+            </form>
+          </div>
+        )
+      }
+
     </>
   )
 }

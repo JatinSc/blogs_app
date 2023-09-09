@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import '../Home.css'
 //for alert messages
 import toast from 'react-hot-toast';
-import Loading from './Loading';
+import PostLoading from './PostLoading';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(false)
@@ -212,10 +212,11 @@ const Home = () => {
             <img className="post" src='./create.png'></img>
           </a>
         </div>
-        {isLoading ? (<div className="loadingContainer"><Loading /></div>) :
+        {isLoading ? (<div className="loadingContainer"><PostLoading /></div>) :
           post && post.filter((post) =>
             post.title.toLowerCase().includes(search.toLowerCase())).map((post, index) =>
-            (<div className="card" key={index}>
+            (
+              <div className="card" key={index}>
               <div className="header">
                 <p>
                   <img src="user.png" alt="account" />
@@ -239,7 +240,8 @@ const Home = () => {
                   <Link className='readMore' to={`/view/${post.id}`}> read more...</Link>
                 </p>
               </div>
-            </div>))
+              </div>
+            ))
         }
 
       </div>

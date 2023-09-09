@@ -21,7 +21,7 @@ const Loading = () => {
 	</div>
 	<div className="spoke"></div>
 </div>
-<p className='loadingText'>Please Wait Loading Your Posts....</p>
+		  <p className='loadingText'>Our hamster's on the job! 🐹</p>
     </>
   )
 }
