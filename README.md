@@ -100,6 +100,10 @@ Designed the user interface to be responsive and work seamlessly on various devi
 ### Error Handling:
 Implemented robust error handling on both the frontend and backend to provide meaningful error messages to users.
 
+### Conclusion
+The Blogs App is a fully functional web application that allows users to create and manage blog posts. It is built using Node.js, Express.js, MySQL, and Sequelize, and incorporates user authentication, RESTful API endpoints, and a responsive user interface. The app follows best practices for data validation, error handling, and state management, providing an excellent user experience for blog creation and management.
+
+
 ## Contributing
 Contributions to this project are welcome. If you find any issues or want to add new features, feel free to create a pull request.
 
@@ -119,7 +123,3 @@ If you have any questions or suggestions, feel free to contact me at [jatinwebpo
 
 ## Icons
 [icons8](https://icons8.com/icons)
-Conclusion
-The Blogs App is a fully functional web application that allows users to create and manage blog posts. It is built using Node.js, Express.js, MySQL, and Sequelize, and incorporates user authentication, RESTful API endpoints, and a responsive user interface. The app follows best practices for data validation, error handling, and state management, providing an excellent user experience for blog creation and management.
-
-
